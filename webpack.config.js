@@ -1,18 +1,22 @@
+var path = require('path');
+
 module.exports = {
-  entry: ['./app/main.js'],
+  entry: [
+  	'webpack-dev-server/client?http://localhost:8080',
+  	'webpack/hot/only-dev-server',
+  	'./src/main.js'
+  ],
   output: {
-    path: './build',
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   module: {
     loaders: [
       { 
       	test: /\.js$/, 
+      	include: path.join(__dirname, 'src'),
       	exclude: /(node_modules|bower_components)/,
-      	loader: 'babel',
-      	query: {
-        	presets: ['es2015', 'react']
-      	} 
+      	loaders: ['react-hot', 'babel'],
       }
     ]
   }
