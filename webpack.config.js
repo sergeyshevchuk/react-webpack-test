@@ -32,8 +32,6 @@ module.exports = {
   devServer: {
     hot: true,
 
-    inline: true,
-
     contentBase: resolve(__dirname, 'dist'),
 
     publicPath: '/'

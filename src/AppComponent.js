@@ -18,7 +18,7 @@ export default class AppComponent extends Component {
 	render() {
 		return (
 			<div>
-	  			<h1>Hello ddd World</h1>
+	  			<h1>Hello World</h1>
 	  			<button onClick={this.handleClick}>{this.state.n}</button>
 	  		</div>
 		);
