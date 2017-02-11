@@ -18,6 +18,6 @@ render(AppComponent);
 
 if (module.hot) {
   module.hot.accept('./AppComponent', () => {
-    render(App)
+    render(AppComponent)
   });
 }
