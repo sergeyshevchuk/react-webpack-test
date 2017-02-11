@@ -1,9 +1,10 @@
 var path = require('path');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var node_modules_dir = path.resolve(__dirname, 'node_modules');
 
 var config = {
-  entry: path.resolve(__dirname, 'src/main.js'),
+  entry: path.resolve(__dirname, 'src/index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.min.js'
@@ -20,6 +21,7 @@ var config = {
     }]
   },
   plugins: [
+    new HtmlWebpackPlugin(),
     new webpack.optimize.UglifyJsPlugin({minimize: true}),
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.min.js')
   ]
